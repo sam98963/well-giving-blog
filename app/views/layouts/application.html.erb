@@ -12,6 +12,30 @@
 
   <body>
     <%= render "layouts/navbar" %>
+    <% if flash[:notice] %>
+      <div class="bg-green-100 border-l-4 border-green-500 text-green-800 p-4 relative" role="alert">
+        <%= flash[:notice] %>
+        <button type="button" class="absolute top-0 bottom-0 right-0 px-4 py-3" data-dismiss="alert" aria-label="Close">
+          <svg class="h-6 w-6 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+    <% end %>
+
+    <% if flash[:alert] %>
+      <div class="bg-yellow-100 border-l-4 border-yellow-500 text-yellow-800 p-4 relative" role="alert">
+        <%= flash[:alert] %>
+        <button type="button" class="absolute top-0 bottom-0 right-0 px-4 py-3" data-dismiss="alert" aria-label="Close">
+          <svg class="h-6 w-6 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+    <% end %>
+
+    <div class = "text-center">
     <%= yield %>
+    </div>
   </body>
 </html>
