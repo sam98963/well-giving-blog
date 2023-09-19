@@ -26,9 +26,12 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
+        flash[:notice] = "Post was successfully created."
         format.html { redirect_to post_url(@post), notice: "Post was successfully created." }
         format.json { render :show, status: :created, location: @post }
       else
+        flash[:alert] = "Failed to create the post"
+        logger.error("Failed: #{@post.errors}")
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @post.errors, status: :unprocessable_entity }
       end
