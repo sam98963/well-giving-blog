@@ -1,4 +1,4 @@
-<%= form_with(model: post) do |form| %>
+<%= form_with(model: @post, url: posts_path , method: :post) do |form| %>
  
   <%= form.label :subject, "Topic:" %>
   <%= form.text_field :subject %>
@@ -7,6 +7,6 @@
   <%= form.text_area :contents %>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Submit" %>
   </div>
 <% end %>
