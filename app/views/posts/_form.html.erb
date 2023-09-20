@@ -1,10 +1,13 @@
-<%= form_with(model: @post, url: posts_path , method: :post) do |form| %>
- 
-  <%= form.label :subject, "Topic:" %>
-  <%= form.text_field :subject %>
+<%= form_with(model: @post, url: posts_path, method: :post) do |form| %>
+  <div class="field">
+    <%= form.label :subject, "Topic:" %>
+    <%= form.text_field :subject, id: "post_subject", name: "post[subject]" %>
+  </div>
 
-  <%= form.label :contents, "Description:" %>
-  <%= form.text_area :contents %>
+  <div class="field">
+    <%= form.label :contents, "Description:" %>
+    <%= form.text_area :contents, id: "post_contents", name: "post[contents]" %>
+  </div>
 
   <div class="actions">
     <%= form.submit "Submit" %>

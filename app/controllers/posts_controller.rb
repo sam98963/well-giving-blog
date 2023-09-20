@@ -22,6 +22,7 @@ class PostsController < ApplicationController
 
   # POST /posts or /posts.json
   def create
+    Rails.logger.info("Received parameters: #{params.inspect}")
     @post = current_user.posts.build(post_params)
 
     respond_to do |format|
@@ -71,5 +72,8 @@ class PostsController < ApplicationController
     def post_params
       params.require(:post).permit(:subject, :contents).merge(user_id: current_user.id)
     end
+    
+    
+    
     
 end
