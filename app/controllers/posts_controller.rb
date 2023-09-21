@@ -3,7 +3,7 @@ class PostsController < ApplicationController
 
   # GET /posts or /posts.json
   def index
-    @posts = Post.all
+    @posts = Post.order(created_at: :desc)
   end
 
   # GET /posts/1 or /posts/1.json
@@ -61,6 +61,14 @@ class PostsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  # Upvote /post/:id
+  def upvote
+    @post = Post.find(params[:id])
+    @post.increment!(:upvote_count)
+    redirect_to root_path
+  end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
