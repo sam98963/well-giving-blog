@@ -1,6 +1,19 @@
-<h1>Main#home</h1>
-<p>Find me in app/views/main/home.html.erb</p>
-
 <% if current_user %>
 Hello, user:<%= current_user.id %> <%= current_user.email%>
 <% end %>
+
+<div class="container w-full h-auto flex flex-wrap flex-col items-center justify-self-center">
+<h1>Welcome to Our Blog</h1>
+<h2>Here are some of our latest entries:</h2>
+
+<section class="w-4/5 h-auto py-10 flex">
+  <% @posts.each do |post| %>
+    <div class="blog-post w-2/5 h-2/5 border border-black rounded mx-3">
+      <h2><%= post.subject %></h2>
+      <p><%= post.contents %></p>
+    </div>
+  <% end %>
+  </section>
+</div>
+
+

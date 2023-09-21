@@ -34,7 +34,7 @@
       </div>
     <% end %>
 
-    <div class = "text-center">
+    <div class = "text-center flex flex-col items-center">
     <% if user_signed_in? %>
     <%= render "posts/form", post: @post %>
   <% else %>
