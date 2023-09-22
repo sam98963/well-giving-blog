@@ -1,15 +1,18 @@
+<h1>Tell us what you have achieved or how you feel today:</h1>
+<form class="w-2/5 border border-black rounded flex flex-col items-center">
 <%= form_with(model: @post, url: posts_path, method: :post) do |form| %>
-  <div class="field">
-    <%= form.label :subject, "Topic:" %>
-    <%= form.text_field :subject, id: "post_subject", name: "post[subject]" %>
-  </div>
+    <div class="field flex flex-col w-3/5 items-start">
+      <%= form.label :subject, "Topic:" %>
+      <%= form.text_field :subject, id: "post_subject", name: "post[subject]", class: "w-full border rounded p-1"%>
+    </div>
 
-  <div class="field">
-    <%= form.label :contents, "Description:" %>
-    <%= form.text_area :contents, id: "post_contents", name: "post[contents]" %>
-  </div>
+    <div class="field flex flex-col w-3/5 items-start">
+      <%= form.label :contents, "Description:" %>
+      <%= form.text_area :contents, id: "post_contents", name: "post[contents]", class: "w-full border rounded p-1" %>
+    </div>
 
-  <div class="actions">
-    <%= form.submit "Submit" %>
-  </div>
-<% end %>
+    <div class="actions w-2/5 items-start py-2">
+      <%= form.submit "Submit", class:"w-full border rounded p-1"%>
+    </div>
+    <% end %>
+    </form>
