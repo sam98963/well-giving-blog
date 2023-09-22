@@ -56,13 +56,15 @@ class PostsController < ApplicationController
 
   # DELETE /posts/1 or /posts/1.json
   def destroy
+    @post = Post.find(params[:id])
     @post.destroy
-
+    flash[:notice] = "Post was successfully deleted."
     respond_to do |format|
-      format.html { redirect_to posts_url, notice: "Post was successfully destroyed." }
+      format.html { redirect_to my_account_url, notice: "Post was successfully destroyed." }
       format.json { head :no_content }
     end
   end
+
 
   # Upvote /post/:id
   def upvote

@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   resources :posts do
     member do
       post 'upvote'
-      patch 'update', to: 'posts#update'
+      patch 'edit', to: 'posts#update'
     end
   end
   
