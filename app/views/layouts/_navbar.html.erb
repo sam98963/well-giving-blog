@@ -2,10 +2,15 @@
   <div class="container mx-auto p-4">
     <div class="flex justify-between items-center">
       <a class="text-xl font-semibold text-gray-800" href="/">Navbar</a>
-      <ul class="flex space-x-4">
+      <ul class="flex space-x-4 items-center">
         <% if current_user %>
-          <li>
-            <%= button_to "My Account", my_account_path, class: "px-4 py-2 text-white bg-orange-500 hover:bg-orange-700 rounded" %>
+        <li>
+          <% if controller_name == 'users' && action_name == 'my_account' %>
+            <%= link_to "Edit Account", edit_user_registration_path, class: "px-4 py-2 text-white bg-orange-500 hover:bg-orange-700 rounded" %>
+          <% else %>
+            <%= link_to "My Account", my_account_path, class: "px-4 py-2 text-white bg-orange-500 hover:bg-orange-700 rounded" %>
+          <% end %>
+            
           </li>
           <li>
             <%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: "px-4 py-2 text-white bg-blue-500 hover:bg-blue-700 rounded" %>
