@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :posts, only: [:index, :show, :new, :create, :edit, :update]
   # config/routes.rb
   post '/posts', to: 'posts#create'  
+  get 'my_account', to: 'users#my_account'
   
   resources :posts do
     member do
