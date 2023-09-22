@@ -18,7 +18,7 @@ class PostsController < ApplicationController
   # GET /posts/1/edit
   def edit
     @post = Post.find(params[:id])
-  end
+  end  
 
   # POST /posts or /posts.json
   def create
@@ -41,7 +41,9 @@ class PostsController < ApplicationController
 
   # PATCH/PUT /posts/1 or /posts/1.json
   def update
+    Rails.logger.info("Update called")
     respond_to do |format|
+      @post = Post.find(params[:id])
       if @post.update(post_params)
         format.html { redirect_to root_path, notice: "Post was successfully updated." }
         format.json { render :show, status: :ok, location: @post }

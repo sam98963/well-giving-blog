@@ -9,6 +9,7 @@
     <p><%= post.contents %></p>
     <p>Posted by: <%= extract_username_from_email(post.user.email) %></p>
     <p>Upvotes: <%= post.upvote_count %></p>
+    <%= link_to 'Edit', edit_post_path(post) %>
   </div>
   <% end %>
 </div>
