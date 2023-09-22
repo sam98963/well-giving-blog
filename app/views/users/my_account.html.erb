@@ -1,12 +1,17 @@
-<main class="flex flex-col items-center">
-<h1>My Account</h1>
+<main class="flex flex-col items-center w-full">
+<h1>Welcome, <%= extract_username_from_email(current_user.email) %>!</h1>
 
 <h2>Your Posts</h2>
-<ul>
+<div class="w-3/4 flex flex-wrap justify-between">
   <% @posts.each do |post| %>
-    <li><%= link_to post.subject, post %></li>
+    <div class="blog-post w-2/5 border border-black rounded mx-3 my-2 flex flex-col items-center justify-center">
+    <h2><%= post.subject %></h2>
+    <p><%= post.contents %></p>
+    <p>Posted by: <%= extract_username_from_email(post.user.email) %></p>
+    <p>Upvotes: <%= post.upvote_count %></p>
+  </div>
   <% end %>
-</ul>
+</div>
 </main>
 
 <%= link_to "Edit Account", edit_user_registration_path %>
