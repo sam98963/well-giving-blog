@@ -9,7 +9,7 @@
     <p><%= post.contents %></p>
     <p>Posted by: <%= extract_username_from_email(post.user.email) %></p>
     <p>Upvotes: <%= post.upvote_count %></p>
-    <%= link_to 'Edit', edit_post_path(post) %>
+    <%= link_to 'Edit', post_path(post), method: :patch %>
     <%= link_to "Delete Post", post_path(post), method: :delete, data: { confirm: "Are you sure you want to delete this post?" }, class: "btn btn-danger" %>
   </div>
   <% end %>
