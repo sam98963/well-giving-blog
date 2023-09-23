@@ -10,6 +10,12 @@ class PostsController < ApplicationController
   def show
   end
 
+  # GET /posts/1/edit
+  def edit
+    @post = Post.find(params[:id])
+  end
+
+
   # GET /posts/new
   def new
     @post = Post.new

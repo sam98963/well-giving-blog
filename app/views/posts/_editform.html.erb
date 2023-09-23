@@ -1,6 +1,7 @@
 <h1>Edit Post:</h1>
-<form class="w-2/5 border border-black rounded flex flex-col items-center" method="patch" action="<%= posts_path %>">
-<%= form_with(model: @post, url: post_path(@post), method: :patch, data: {method: :patch}) do |form| %>
+<form class="w-2/5 border border-black rounded flex flex-col items-center" method="patch" action="<%= post_path(@post) %>" enctype="multipart/form-data">
+  <%= form_with(model: @post, local: true) do |form| %>
+
     <div class="field flex flex-col w-3/5 items-start">
       <%= form.label :subject, "Topic:" %>
       <%= form.text_field :subject, id: "post_subject", name: "post[subject]", class: "w-full border rounded p-1"%>
