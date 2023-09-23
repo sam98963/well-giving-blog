@@ -1,5 +1,5 @@
 <h1>Edit Post:</h1>
-<form class="w-2/5 border border-black rounded flex flex-col items-center">
+<form class="w-2/5 border border-black rounded flex flex-col items-center" method="patch" action="<%= posts_path %>">
 <%= form_with(model: @post, url: post_path(@post), method: :patch, data: {method: :patch}) do |form| %>
     <div class="field flex flex-col w-3/5 items-start">
       <%= form.label :subject, "Topic:" %>

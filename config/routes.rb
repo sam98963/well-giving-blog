@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   devise_for :users
   devise_for :installs
+  
+  resources :posts, only: [:index, :show, :new, :create]
 
   root 'main#home'
 
@@ -15,5 +17,4 @@ Rails.application.routes.draw do
     end
   end
   
-  resources :posts, only: [:index, :show, :new, :create]
 end
