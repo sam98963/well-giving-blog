@@ -1,5 +1,6 @@
 class MainController < ApplicationController
   def home
-    @posts = Post.all
+    @q = Post.ransack(params[:q])
+    @posts = @q.result
   end
 end
