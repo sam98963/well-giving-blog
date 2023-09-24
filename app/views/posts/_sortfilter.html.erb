@@ -1,6 +1,7 @@
 <div class="sorting-options">
-  <%= link_to "Sort by newest", root_path(q: params[:q], order: "created_at desc") %>
-  <%= link_to "Sort by oldest", root_path(q: params[:q], order: "created_at asc") %>
-  <%= link_to "Sort by highest votes", root_path(q: params[:q], order: "upvote_count desc") %>
-  <%= link_to "Sort by lowest votes", root_path(q: params[:q], order: "upvote_count asc") %>
+  <%= form_tag(root_path, method: :get, class: 'form-inline') do %>
+    <label for="q_s">Sort by:</label>
+    <%= select_tag 'q[s]', options_for_select([['Newest', 'created_at desc'], ['Oldest', 'created_at asc'], ['Highest Votes', 'upvote_count desc'], ['Lowest Votes', 'upvote_count asc']], params[:q]&.dig(:s)), class: 'form-control' %>
+    <%= submit_tag 'Apply', class: 'btn btn-primary' %>
+  <% end %>
 </div>

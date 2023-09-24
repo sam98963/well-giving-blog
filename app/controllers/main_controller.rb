@@ -1,13 +1,8 @@
 class MainController < ApplicationController
   def home
-    @q = Post.ransack(params[:q], sort: 'created_at desc')
+    @q = Post.ransack(params[:q])
+    @q.sorts = 'created_at desc' if @q.sorts.empty?  # Set default sorting to "newest first" if no sorting is specified
     @posts = @q.result
-
-    if params[:order].present?
-      puts "Sorting order: #{params[:order]}"
-      @posts = @posts.order(params[:order])
-    else
-      @posts = @posts.order('created_at desc')
-    end 
-  end 
+  end
 end
+
