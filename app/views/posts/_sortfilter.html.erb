@@ -1,4 +1,6 @@
 <div class="sorting-options">
-  <%= link_to "Sort by Date (Descending)", root_path(q: params[:q], order: "created_at desc") %>
-  <%= link_to "Sort by Date (Ascending)", root_path(q: params[:q], order: "created_at asc") %>
+  <%= link_to "Sort by newest", root_path(q: params[:q], order: "created_at desc") %>
+  <%= link_to "Sort by oldest", root_path(q: params[:q], order: "created_at asc") %>
+  <%= link_to "Sort by highest votes", root_path(q: params[:q], order: "upvote_count desc") %>
+  <%= link_to "Sort by lowest votes", root_path(q: params[:q], order: "upvote_count asc") %>
 </div>
