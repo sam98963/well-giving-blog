@@ -1,11 +1,13 @@
 
-<%= search_form_for @q, url: "" do |f| %>
-  <div class="form-group">
+<%= search_form_for @q,class:"flex flex-col" ,url: "" do |f| %>
+  <div class="form-group my-4 flex flex-col items-start">
     <%= f.label :contents_cont, "Search Posts:" %>
-    <%= f.text_field :contents_cont, :class => "form-control", :placeholder => "Enter a few characters" %>
+    <section>
+      <%= f.text_field :contents_cont, :class => "form-control border border-black rounded pl-2 py-2", :placeholder => "Enter a few characters" %>
+      <%= f.submit :class => "cursor-pointer px-4 py-2 text-white bg-blue-500 hover:bg-blue-700 rounded" %>
+    </section>
+    <%= link_to "Clear filters", root_path, class: "btn btn-default btn-block text-gray-100"%> 
   </div>
-  <%= f.submit :class => "btn btn-primary btn-block" %>
-  <%= link_to "Clear filters", root_path, class: "btn btn-default btn-block"%> 
 <% end %>
 
 <%= render "/posts/sortfilter" %>

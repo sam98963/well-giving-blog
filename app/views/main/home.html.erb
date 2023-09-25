@@ -1,7 +1,7 @@
 <% if current_user %>
-<h1 class="text-xl">Hello, <%= extract_username_from_email(current_user.email)%>, welcome to our blog!</h1>
+<h1 class="text-xl py-10 px-4">Hello, <span class="text-indigo-500"><%= extract_username_from_email(current_user.email)%></span>. Welcome to our blog!</h1>
 <% else %>
-<h1>Welcome to Our Blog!</h1>
+<h1 class="text-xl py-10">Welcome to Our Blog!</h1>
 <% end %>
 
 <div class="container w-full h-fit flex flex-wrap flex-col items-center justify-self-center">
