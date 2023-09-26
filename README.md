@@ -15,4 +15,4 @@ A Ruby on Rails application based on Rails (7.0.8). A blog app to allow users to
 - Run "bundle install" to install any dependencies/gems in the gemfile.
 - Ensure you have postgreSQL installed on your local machine and run "brew services start postgresql" to start a postgresql server locally.
 - Run "rails s" or "./bin/dev" to run the application locally.
-- Post your jounrey, or support others while they stay active and help others!
+- Post your journey, or support others while they stay active and help others!
