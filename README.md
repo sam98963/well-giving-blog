@@ -1,24 +1,18 @@
-# README
+# wellgiving blog
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A Ruby on rails application based on rails(7.0.8). A blog app to allow users to post their accomplishments within fitness/health-based charity challenges.
 
-Things you may want to cover:
+## Functionality
 
-* Ruby version
+- The app contains User Authentication using the Devise gem.
+- The app contains CRUD components allowing users to post, delete, edit their own blogs, as well as view and clap all blogs.
+- The app contains Search Filtering and Sorting using the Ransack gem.
 
-* System dependencies
+## Running the Application
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Clone the repo.
+- Navigate to the correct folder using "cd (your-path)/well-giving-blog".
+- Run "bundle install" to install any dependencies/gems in the gemfile.
+- Ensure you have postgreSQL installed on your local machine and run "brew services start postgresql" to start a postgresql server locally.
+- Run "rails s" or "./bin/dev" to run the application locally.
+- Post your jounrey, or support others while they stay active and help others!
