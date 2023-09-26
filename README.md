@@ -1,6 +1,6 @@
 # wellgiving blog
 
-A Ruby on rails application based on rails(7.0.8). A blog app to allow users to post their accomplishments within fitness/health-based charity challenges.
+A Ruby on Rails application based on Rails (7.0.8). A blog app to allow users to post their accomplishments within fitness/health-based charity challenges.
 
 ## Functionality
 
