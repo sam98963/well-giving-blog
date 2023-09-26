@@ -1,7 +1,7 @@
 <div class="sorting-options px-4">
   <%= form_tag(root_path, method: :get, class: 'form-inline flex flex-col items-start') do %>
     <label for="q_s">Sort by:</label>
-    <%= select_tag 'q[s]',options_for_select([['Newest', 'created_at desc'], ['Oldest', 'created_at asc'], ['Highest Votes', 'upvote_count desc'], ['Lowest Votes', 'upvote_count asc']], params[:q]&.dig(:s)), class: 'form-control border border-black rounded pl-2 py-2 my-2' %>
+    <%= select_tag 'q[s]',options_for_select([['Newest', 'created_at desc'], ['Oldest', 'created_at asc'], ['Highest Votes', 'upvote_count desc'], ['Lowest Votes', 'upvote_count asc']], params[:q]&.dig(:s)), class: 'form-control border border-gray-100 rounded pl-2 py-2 my-2' %>
     <%= submit_tag 'Apply', class: 'cursor-pointer px-4 py-2 text-white bg-blue-500 hover:bg-blue-700 rounded' %>
   <% end %>
 </div>

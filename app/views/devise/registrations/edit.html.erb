@@ -1,43 +1,38 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<main class="w-2/5 flex flex-col items-center">
+  <h2 class="text-xl my-4 p-1 border border-gray-100 rounded w-full">Edit Account</h2>
+  <section class="flex flex-col w-3/5 my-4 p-4 border border-gray-100 rounded">
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), class:"flex flex-col items-center", html: { method: :put }) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+      <div class="field flex-col flex items-start p-1">
+        <%= f.label "email:" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"w-full border rounded p-1" %>
+      </div>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+      <% end %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+      <div class="field flex-col flex items-start p-1">
+        <%= f.label "New Password:" %>
+        <%= f.password_field :password, autocomplete: "new-password", class:"w-full border rounded p-1" %>
+        <% if @minimum_password_length %>
+        <% end %>
+      </div>
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
+      <div class="field flex-col flex items-start p-1">
+        <%= f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"w-full border rounded p-1" %>
+      </div>
 
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
+      <div class="field flex-col flex items-start p-1">
+        <%= f.label :current_password %>
+        <%= f.password_field :current_password, autocomplete: "current-password", class:"w-full border rounded p-1" %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "Update", class:"w-3/5 cursor-pointer text-white bg-blue-500 hover:bg-blue-700 rounded p-1 my-4" %>
+      </div>
     <% end %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "current-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
-<% end %>
-
-<h3>Cancel my account</h3>
-
-<div>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete %></div>
-
-<%= link_to "Back", :back %>
+  </section>
+  <div class="text-xl">Unhappy? </div><%= button_to "Cancel my account" ,registration_path(resource_name), data: {turbo_confirm: "Are you sure you want to delete your account?" }, class:"px-4 py-2 text-white bg-orange-500 hover:bg-orange-700  rounded my-4", method: :delete  %></div>
+</main>

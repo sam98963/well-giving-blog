@@ -1,13 +1,13 @@
-<div class = "flex flex-row w-3/5 items-center justify-center">
+<div class = "flex flex-row w-2/5 items-center justify-center">
 <%= render "/posts/sortfilter" %>
 <%= search_form_for @q,class:"flex flex-col w-2/5 px-4" ,url: "" do |f| %>
   <div class="form-group my-4 flex flex-col items-start">
     <%= f.label :contents_cont, "Search Posts:" %>
     <section class="flex flex-col items-start">
-      <%= f.text_field :contents_cont, :class => "form-control border border-black rounded pl-2 py-2 my-2", :placeholder => "Enter a few characters" %>
+      <%= f.text_field :contents_cont, :class => "form-control border border-gray-100 rounded pl-2 py-2 my-2", :placeholder => "Enter a few characters" %>
      <div>
       <%= f.submit :class => "cursor-pointer px-4 py-2 text-white bg-blue-500 hover:bg-blue-700 rounded" %>
-      <%= link_to "Clear filters", root_path, class: "btn btn-default btn-block text-gray-100"%> 
+      <%= link_to "Clear", root_path, class: "btn btn-default btn-block px-4 py-2 bg-gray-100 rounded"%> 
     </div
     </section>
   </div>
@@ -17,7 +17,7 @@
 
 
 
-<h2 class="text-xl my-4 p-1 border border-gray-400 rounded">Here are some of our latest entries:</h2>
+<h2 class="text-xl my-4 p-1 border border-gray-100 rounded w-2/5">Here are some of our latest entries:</h2>
 
 <section class="w-4/5 h-auto py-10 flex flex-wrap justify-between">
 <% @posts.each do |post| %>
