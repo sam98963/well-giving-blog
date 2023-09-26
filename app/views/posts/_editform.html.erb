@@ -1,19 +1,21 @@
-<h1>Edit Post:</h1>
-<form class="w-2/5 border border-black rounded flex flex-col items-center" method="patch" action="<%= post_path(@post) %>" enctype="multipart/form-data">
+<main class="w-2/5 flex flex-col items-center">
+<h1 class="text-xl w-full border border-gray-100 rounded p-1 my-4">Edit Post:</h1>
+<form class="w-3/5 border border-gray-100 rounded flex flex-col items-center p-4 my-4" method="patch" action="<%= post_path(@post) %>" enctype="multipart/form-data">
   <%= form_with(model: @post, local: true) do |form| %>
 
-    <div class="field flex flex-col w-3/5 items-start">
+    <div class="field flex-col flex items-start p-1 w-full">
       <%= form.label :subject, "Topic:" %>
       <%= form.text_field :subject, id: "post_subject", name: "post[subject]", class: "w-full border rounded p-1"%>
     </div>
 
-    <div class="field flex flex-col w-3/5 items-start">
+    <div class="field flex-col flex items-start p-1 w-full">
       <%= form.label :contents, "Description:" %>
       <%= form.text_area :contents, id: "post_contents", name: "post[contents]", class: "w-full border rounded p-1" %>
     </div>
 
-    <div class="actions w-2/5 items-start py-2">
-      <%= form.submit "Submit", class:"w-full border rounded p-1"%>
+    <div class="actions w-full">
+      <%= form.submit "Submit", class:"w-3/5 cursor-pointer text-white bg-blue-500 hover:bg-blue-700 rounded p-1 my-4"%>
     </div>
     <% end %>
     </form>
+</main>
