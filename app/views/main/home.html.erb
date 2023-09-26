@@ -8,7 +8,7 @@
 <% if user_signed_in? %>
 <%= render "posts/form", post: @post %>
 <% else %>
-<p>Please sign in to post.</p>
+<h1 class="text-xl py-10">Please sign in to post.</h1>
 <% end %>  
 <%= render "posts/index"%>
 
