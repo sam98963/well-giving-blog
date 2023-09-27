@@ -1,14 +1,14 @@
 <% if current_user %>
 <h1 class="text-2xl my-4 p-1 border border-gray-100 rounded w-2/5">Hello, <%= extract_username_from_email(current_user.email)%>. Welcome to our blog!</h1>
 <% else %>
-<h1 class="text-xl py-10">Welcome to Our Blog!</h1>
+<h1 class="text-2xl my-4 p-1 border border-gray-100 rounded w-2/5">Welcome to Our Blog!</h1>
 <% end %>
 
 <div class="container w-full h-fit flex flex-wrap flex-col items-center justify-self-center">
 <% if user_signed_in? %>
 <%= render "posts/form", post: @post %>
 <% else %>
-<h1 class="text-xl py-10">Please sign in to post.</h1>
+<h1 class="text-xl my-4 border-b border-gray-100">Please sign in to post.</h1>
 <% end %>  
 <%= render "posts/index"%>
 
