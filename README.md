@@ -26,5 +26,5 @@ A Ruby on Rails application based on Rails (7.0.8). A blog app to allow users to
 
 ## Here is a showcase of the application
 
-https://github.com/sam98963/well-giving-blog/assets/101294463/78515742-8b18-41d6-bf52-c2ea5794962c
+https://github.com/sam98963/well-giving-blog/assets/101294463/16c00105-870a-4efd-896b-743a2ccc825f
 
