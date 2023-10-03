@@ -1,4 +1,4 @@
-<h1 class="my-4 border-b border-gray-100">Tell us what you have achieved or how you feel today:</h1>
+<h1 class="text-xl my-4 border-b border-gray-100">Tell us what you have achieved or how you feel today:</h1>
 <form class="w-2/5 border border-gray-100 rounded flex flex-col items-center p-4" method="post" action="<%= posts_path %>">
 <%= form_with(model: @post, url: posts_path, method: :post) do |form| %>
     <div class="field flex flex-col w-3/5 items-start">

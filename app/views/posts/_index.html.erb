@@ -32,18 +32,17 @@
       </p>
     </div>
 
-    <div class="field flex flex-row w-full px-4 items-center">
+    <div class="field w-full px-4 flex flex-col items-center justify-between md:flex-row md:items-between md:justify-center">
        <div class="field flex flex-row w-full items-center justify-center">
         <h2 class="p-1 ">Posted by:</h2>
           <%= extract_username_from_email(post.user.email) %>
       </div>
-      <div class="flex flex-row w-4/5 items-between justify-center">
+      <div class="flex flex-col items-center justify-between md:flex-row md:w-4/5 md:items-between md:justify-center">
       <%= button_to upvote_post_path(post), method: :post, class: 'upvote-button my-2 p-1 w-2/5 flex flex-row items-center justify-end' do %>
         <%= image_tag "clapping.png", class: "w-2/5" %>
         <p class="mt-1"><%= post.upvote_count %></p>
       <% end %>      
       </div>
     </div>
-    
   </div>
 <% end %>

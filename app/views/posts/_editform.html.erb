@@ -1,5 +1,5 @@
 <main class="w-2/5 flex flex-col items-center">
-<h1 class="text-xl w-full border border-gray-100 rounded p-1 my-4">Edit Post:</h1>
+<h1 class="text-4xl w-full border border-gray-100 rounded p-1 my-4">Edit Post:</h1>
 <form class="w-3/5 border border-gray-100 rounded flex flex-col items-center p-4 my-4" method="patch" action="<%= post_path(@post) %>" enctype="multipart/form-data">
   <%= form_with(model: @post, local: true) do |form| %>
 

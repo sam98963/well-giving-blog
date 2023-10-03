@@ -1,5 +1,5 @@
 <main class="w-2/5 flex flex-col items-center">
-  <h2 class="text-xl my-4 p-1 border border-gray-100 rounded w-full">Edit Account</h2>
+  <h2 class="text-4xl my-4 p-1 border border-gray-100 rounded w-full">Edit Account</h2>
   <section class="flex flex-col w-3/5 my-4 p-4 border border-gray-100 rounded">
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), class:"flex flex-col items-center", html: { method: :put }) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
