@@ -1,6 +1,6 @@
-<main class="w-2/5 flex flex-col items-center">
+<main class="w-4/5 lg:w-2/5 flex flex-col items-center md:text-base text-sm">
   <h2 class="text-4xl my-4 p-1 border border-gray-100 rounded w-full">Sign up</h2>
-  <section class="flex flex-col w-3/5 my-4 p-4 border border-gray-100 rounded">
+  <section class="flex flex-col w:4/5 md:w-3/5 my-4 p-4 border border-gray-100 rounded">
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
 
