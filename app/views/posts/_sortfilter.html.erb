@@ -1,4 +1,4 @@
-<div class="sorting-options px-4">
+<div class="sorting-options px-4 mt-4 sm:text-base text-sm">
   <%= form_tag(root_path, method: :get, class: 'form-inline flex flex-col items-center md:items-start') do %>
     <label for="q_s">Sort by:</label>
     <%= select_tag 'q[s]',options_for_select([['Newest', 'created_at desc'], ['Oldest', 'created_at asc'], ['Highest Votes', 'upvote_count desc'], ['Lowest Votes', 'upvote_count asc']], params[:q]&.dig(:s)), class: 'form-control border border-gray-100 rounded pl-2 py-2 my-2' %>

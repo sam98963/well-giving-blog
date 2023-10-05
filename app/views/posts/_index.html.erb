@@ -1,8 +1,8 @@
-<div class = "flex md:flex-row md:w-2/5 md:items-center md:justify-center flex-col w-4/5 justify-center items-center">
+<div class = "flex md:flex-row md:w-2/5 md:items-center md:justify-center flex-col w-4/5 justify-center items-center sm:text-base text-sm">
   <%= render "/posts/sortfilter" %>
   <%= search_form_for @q,class:"flex flex-col w-2/5 px-4" ,url: "" do |f| %>
     <div class="form-group my-4 flex flex-col items-center md:items-start">
-      <%= f.label :contents_cont, "Search Posts:" %>
+      <%= f.label :contents_cont, "Search Posts:"%>
       <section class="flex flex-col items-center md:items-start">
         <%= f.text_field :contents_cont, :class => "form-control border border-gray-100 rounded pl-2 py-2 my-2", :placeholder => "Enter a few characters" %>
       <div>
