@@ -28,7 +28,7 @@ class PostsController < ApplicationController
     respond_to do |format|
       @post = Post.find(params[:id])
       if @post.update(post_params)
-        format.html { redirect_to root_path, notice: "Post was successfully updated." }
+        format.html { redirect_to my_account_path, notice: "Post was successfully updated." }
         format.json { render :show, status: :ok, location: @post }
       else
         format.html { render :edit, status: :unprocessable_entity }
