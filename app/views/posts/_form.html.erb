@@ -1,18 +1,18 @@
 <h1 class="text-md md:text-xl my-4 border-b border-gray-100 p-4">Tell us what you have achieved or how you feel today:</h1>
 <form class="w-4/5 md:w-2/5 border border-gray-100 rounded flex flex-col items-center p-4 sm:text-base text-sm" method="post" action="<%= posts_path %>">
-<%= form_with(model: @post, url: posts_path, method: :post) do |form| %>
+  <%= form_with(model: @post, url: posts_path, method: :post) do |form| %>
     <div class="field flex flex-col w-4/5 lg:w-3/5 items-start my-1">
       <%= form.label :subject, "Topic:" %>
-      <%= form.text_field :subject, id: "post_subject", name: "post[subject]", class: "w-full border rounded p-1"%>
+      <%= form.text_field :subject, id: "post_subject", name: "post[subject]", class: "w-full border rounded p-1", required: true, minlength: 5 %>
     </div>
 
     <div class="field flex flex-col w-4/5 lg:w-3/5 items-start my-1">
       <%= form.label :contents, "Description:" %>
-      <%= form.text_area :contents, id: "post_contents", name: "post[contents]", class: "w-full border rounded p-1" %>
+      <%= form.text_area :contents, id: "post_contents", name: "post[contents]", class: "w-full border rounded p-1", required: true, minlength: 20 %>
     </div>
 
     <div class="actions w-3/5 md:w-2/5 items-start py-2 my-1">
       <%= form.submit "Submit", class:"w-full cursor-pointer text-white bg-blue-500 hover:bg-blue-700 rounded p-1"%>
     </div>
-    <% end %>
-    </form>
+  <% end %>
+</form>
